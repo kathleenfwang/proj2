@@ -1,0 +1,18 @@
+body {
+  margin:0;
+}
+.App {
+  margin:0;
+  text-align: center;
+}
+
+.welcome {
+  height:1000px;
+  margin:0;
+  background-image: url('https://images4.alphacoders.com/600/thumb-1920-600528.png');
+  background-size: cover;
+}
+
+.welcome h1 {
+  margin:0;
+}
