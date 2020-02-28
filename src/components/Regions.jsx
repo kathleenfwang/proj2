@@ -23,6 +23,7 @@ export default class Regions extends React.Component{
   }
   componentDidMount() {
     // render all the picture images 
+    window.scrollTo(0, 0);
     const regionArr = championRegions.map((regions) => {
       let len = regions[1].length - 1 
       console.log(regions[1][len])
@@ -54,14 +55,17 @@ export default class Regions extends React.Component{
     }
     console.log(randomRegions)
     return (
-      <div>
+      <div className ="regionWholeContainer">
+   
         <h1 className ="regionHead"> 
       Explore Different Regions 
       </h1>
+       
       
       <div className ="regionDivs"> 
         {randomRegions}
         </div>
+      
       </div>
     )
   }

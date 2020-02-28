@@ -15,6 +15,7 @@ export default class ChampInfo extends Component {
 
  //`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_${skinNums[skinIndex]}.jpg`
   componentDidMount() {
+    window.scrollTo(0, 0);
     // render picture 
     console.log(this.props)
     const { skins,id } = this.props.info // [{},{}] 
@@ -141,7 +142,7 @@ export default class ChampInfo extends Component {
            </li>
                 </ul>
                 </div>
-              <Link to ="/regions"> <button className ="infoButton"> Time to explore! </button></Link>
+              <Link to ="/regions"><button className ="infoButton"> Time to explore! </button></Link>
            
          </div> 
           : null}

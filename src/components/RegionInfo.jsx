@@ -12,10 +12,11 @@ export default function regionInfo(props) {
       let imgUrl = `${url}${champ}.png`
       console.log(url)
       return (
-        <li>
-          <Link to = {`/champions/${champ}`}>
-          <img src={imgUrl} />
-            <h2> {champ} </h2>
+       
+        <li className ="champRegionListItem">
+          <Link style={{ textDecoration: 'none', fontSize: 15 }} to={`/champions/${champ}`}>
+          <img className ="champRegionImgs" src={imgUrl} />
+            <h2 id ="champRegionName"> {champ} </h2>
             </Link>
         </li>
       )
@@ -32,7 +33,14 @@ export default function regionInfo(props) {
 
       <div> 
        
-        <div className = "regionList"> 
+        <div className="regionList"> 
+          <div className="regionLore"> 
+            <p style ={{padding:20}}>
+            <p id = "letterLore"> {info[2][0]} </p>
+            {info[2].slice(1)}
+            </p>
+            </div>
+          <h1 id ="regionChampions">Champions</h1>
         <ul>
           {champs}
           </ul>

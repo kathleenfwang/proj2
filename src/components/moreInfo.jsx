@@ -8,13 +8,14 @@ class moreInfo extends React.Component {
   }
 
   render() {
+
     let {id,lore,spells,stats} = this.props.location.state.data
     console.log(Object.keys(stats))
 
     let skinUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`
     spells = spells.map((spell) => {
     
-      return (<li key ={spell.id}><h3> {spell.name} </h3> <p> {spell.description} </p></li>)
+      return (<li key ={spell.id}><h3> {spell.name} </h3> <p style={{lineHeight:1.6}}> {spell.description} </p></li>)
     })
     return(
       <div className="containerInfo">
