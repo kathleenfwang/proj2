@@ -15,7 +15,7 @@ export default function regionInfo(props) {
         <li>
           <Link to = {`/champions/${champ}`}>
           <img src={imgUrl} />
-            {champ}
+            <h2> {champ} </h2>
             </Link>
         </li>
       )
@@ -24,12 +24,20 @@ export default function regionInfo(props) {
   let regionUrl = info[1][info[1].length-1]
   return (
     
-    <div>
-     
-      <img src={regionUrl}></img> 
-      
-      {name}
-      {champs}
+    <div className = "regionInfo">
+      <div className ="regionContainer"> 
+        <img className="regionImg" src={regionUrl}></img> 
+        <h1 className ="centered"> {name} </h1>
+      </div>
+
+      <div> 
+       
+        <div className = "regionList"> 
+        <ul>
+          {champs}
+          </ul>
+          </div>
+      </div>
     
     </div>
   )
