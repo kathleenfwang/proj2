@@ -23,7 +23,7 @@ class moreInfo extends React.Component {
       <h1> {id} </h1>
           <img src={skinUrl} />
           <h2> Lore </h2>
-      <p className = "lore"> {lore} </p>
+          <p style={{ lineHeight: 1.6, fontSize: '1.2em', padding: 20 }}>  <span style={{ fontSize: '1.5em', fontWeight: 'bold', borderBottom: '2px solid #333', fontFamily: 'arial', paddingLeft: 20 }} > {lore[0]} </span> {lore.slice(1)} </p>
       </main>
       <ul> <h2> Spells </h2>
         {spells}
