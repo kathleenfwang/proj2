@@ -16,7 +16,9 @@ export default class Regions extends React.Component{
     let len = championRegions.length - 1  
     let arr = [] 
     for (let i = 0; i < 3; i++) {
-      arr.push(randomNum(len))
+      let num = randomNum(len)
+      if (!arr.includes(num)) arr.push(randomNum(len))
+      
     }
     return arr 
 
