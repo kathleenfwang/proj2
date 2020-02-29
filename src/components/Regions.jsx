@@ -3,7 +3,7 @@ import { championRegions } from '../championRegions.js'
 import { Link } from 'react-router-dom'
 
 function randomNum(len) {
-  return Math.floor(Math.random() * (len) ) + 1 
+  return Math.floor(Math.random() * (len) )  
 }
 export default class Regions extends React.Component{
   constructor() {
@@ -12,17 +12,7 @@ export default class Regions extends React.Component{
       regionArr: [] 
     }
   }
-  pickThreeRegions = () => {
-    let len = championRegions.length - 1  
-    let arr = [] 
-    for (let i = 0; i < 3; i++) {
-      let num = randomNum(len)
-      if (!arr.includes(num)) arr.push(randomNum(len))
-      
-    }
-    return arr 
-
-  }
+   
   componentDidMount() {
     // render all the picture images 
     window.scrollTo(0, 0);
@@ -51,9 +41,14 @@ export default class Regions extends React.Component{
     const { regionArr } = this.state 
     console.log(regionArr)
     let randomRegions = [] 
+    let nums = [] 
     for (let i = 0; i < 4; i++) {
-      let num = Math.floor(Math.random() * (regionArr.length - 1)) 
-      randomRegions.push(regionArr[num])
+      let num = Math.floor(Math.random() * (regionArr.length - 1))
+      if (!nums.includes(num)) {
+        nums.push(num)
+        randomRegions.push(regionArr[num])
+      }
+      
     }
     console.log(randomRegions)
     return (
