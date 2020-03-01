@@ -46,7 +46,7 @@ export default function regionInfo(props) {
           </ul>
           </div>
       </div>
-    
+      
     </div>
   )
 }

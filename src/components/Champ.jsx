@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import url from '../url'
 import ChampInfo from './ChampInfo'
+import Error from './Error'
 
 export default class Champ extends Component {
   constructor(props) {
@@ -9,32 +10,46 @@ export default class Champ extends Component {
     this.state = {
       info: {},
       isLoaded: false,
+      params: ""
 
     }
 
-
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
   async componentDidMount() {
  
     const { name } = this.props.match.params
    
-
-    const resp = await axios.get(`${url}/${name}.json`)
+    this.setState({
+        params:name
+      })
+      const resp = await axios.get(`${url}/${name}.json`)
   
     this.setState({
-      info: resp.data.data[name],
-      isLoaded: true
+    
+        info: resp.data.data[name],
+        isLoaded: true
       })
   }
-
+ handleKeyPress(event) {
+    if (event.key === "Enter") {
+      const {value }  = event.target
+      window.location.replace(`/champions/${value}`)
+    }
+  }
+ 
   render() {
     let { isLoaded, info } = this.state
  
 
     return (
       <div>
-        <h1> Meet.. </h1>
-        {isLoaded ? <ChampInfo info={info} /> : null}
+        <div id ="search"> 
+          <h1> Meet..
+            <input onKeyPress={this.handleKeyPress}placeholder= "Search..."></input>
+          </h1>
+        </div>
+        {isLoaded ? <ChampInfo info={info} /> : <Error info={this.state.params}/> }
       </div>
     )
   }

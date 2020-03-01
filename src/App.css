@@ -45,6 +45,17 @@ a {
   color:#333;
   
 }
+#search {
+  display:flex;
+  justify-content: space-evenly;
+}
+ input {
+   width:200px;
+   margin-left:20px;
+   padding:10px;
+   border-radius:30px;
+   border:2px solid whitesmoke;
+ }
 
 a:hover {
   font-size:1.2em;
@@ -108,11 +119,34 @@ ul {
 li {
   list-style-type: none;
 }
+.errorPage {
 
+  background-image: url("https://thumbs.gfycat.com/AlarmingGrotesqueChipmunk-size_restricted.gif");
+  background-size: cover;
+  border-radius:50px;
+}
+ 
+.error {
+  opacity:80%;
+  text-align:center;
+  background-color:whitesmoke;
+  padding:30px 20px 100px 20px;
+  width:70%;
+  margin:auto;
+  border-radius:30px;
+   
+}
+.error h1 {
+  border-bottom:2px solid white;
+  padding-bottom: 20px;
+}
+#red {
+  color:palevioletred;
+}
 .infoButton {
   border:none;
   cursor:pointer;
-  background-color:gold;
+  background-color:tan;
   border-radius:20px;
   font-size:1.5em;
   color:black;
@@ -121,6 +155,12 @@ li {
 .infoButton:hover {
   background-color:white;
   border:2px solid gold;
+}
+#exploreButton {
+  background-color:#FACB5B;
+}
+#exploreButton:hover {
+  background-color: white;
 }
 .wholePage {
  
@@ -144,7 +184,7 @@ main {
 
 .container img {
   width:90%;
-  height:70%;
+  height:90%;
   border-radius:70px;
   padding-top:30px;
   object-fit:cover;
@@ -176,6 +216,12 @@ footer {
   margin-top:2%;
   text-align: center;
   height:100px;
+}
+footer a {
+ 
+  border-radius:30px;
+  padding:10px;
+  margin:10px;
 }
 
 /* .container {

@@ -17,7 +17,8 @@ class moreInfo extends React.Component {
     
       return (<li key ={spell.id}><h3> {spell.name} </h3> <p style={{lineHeight:1.6}}> {spell.description} </p></li>)
     })
-    return(
+    return (
+      <>
       <div className="containerInfo">
       <main> 
       <h1> {id} </h1>
@@ -58,10 +59,13 @@ class moreInfo extends React.Component {
               {stats.attackdamage}
           </div>
            </li>
-      </ul>
+            </ul>
+            
+        </div>
+        
       </div>
-    
-      </div>
+      <Link to={`/champions/${id}`} style = {{marginTop:20}}> Back to Champion </Link> 
+      </>
     )
   }
 }
