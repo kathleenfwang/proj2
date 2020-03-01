@@ -25,7 +25,7 @@ export default function regionInfo(props) {
   let regionUrl = info[1][info[1].length-1]
   return (
     
-    <div className = "regionInfo">
+    <div className="regionInfo">
       <div className ="regionContainer"> 
         <img className="regionImg" src={regionUrl}></img> 
         <h1 className ="centered"> {name} </h1>

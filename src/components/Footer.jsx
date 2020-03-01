@@ -5,8 +5,9 @@ export default function Footer() {
   return (
     <div>
       <footer> 
-        <Link to="/regions"> Regions </Link> | 
-        <Link to="/" > Home </Link>
+        <button> <Link to="/regions">  Regions</Link>  </button>
+       |
+      <button> <Link to="/" >   Home </Link></button>
         </footer>
     </div>
   )
