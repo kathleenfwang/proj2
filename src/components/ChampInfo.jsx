@@ -17,19 +17,19 @@ export default class ChampInfo extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     // render picture 
-    console.log(this.props)
+ 
     const { skins,id } = this.props.info // [{},{}] 
     const skinIndexes = skins.map((skin) => {
       return skin.num 
     })
-    console.log(skins)
+  
  
     const num = Math.floor(Math.random() * (skins.length)) 
     let index = skinIndexes[num] 
     let skinName = skins[num]["name"]
     if (skinName === "default") skinName = `${skinName} ${id}`
 
-    console.log(index)
+ 
 
     let url = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${index}.jpg` 
 

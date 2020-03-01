@@ -1,14 +1,40 @@
 body {
   margin:0;
 }
-@media only screen and (max-width: 600px) {
-  img {
-    width:100px;
+@media only screen and (max-width: 700px) {
+  .statGrid{
+    display:none;
   }
-  .container img {
-    width:100px;
+
+  .statGrid2 {
+    display:none;
   }
- 
+  .bar {
+    display:none;
+  }
+  .container {
+    padding:0;
+  }
+  .containerInfo {
+    display:block;
+    padding:0;
+  }
+  .regionImg {
+    width:10%;
+  }
+  .regionLore {
+   display:none;
+  }
+  .regionChampList {
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .containerInfo img {
+    display:none;
+  }
+  .spells{
+    display:none;
+  }
 }
 .App {
   margin:50px;
@@ -107,7 +133,7 @@ li {
   border:2px solid whitesmoke;
   display:grid;
  
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
   border-radius:30px;
   padding:30px;
 }
@@ -117,9 +143,9 @@ main {
 }
 
 .container img {
-  width:800px;
-  height:700px;
-  border-radius:50px;
+  width:90%;
+  height:70%;
+  border-radius:70px;
   padding-top:30px;
   object-fit:cover;
   

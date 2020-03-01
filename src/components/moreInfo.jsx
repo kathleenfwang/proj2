@@ -10,7 +10,7 @@ class moreInfo extends React.Component {
   render() {
 
     let {id,lore,spells,stats} = this.props.location.state.data
-    console.log(Object.keys(stats))
+     
 
     let skinUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`
     spells = spells.map((spell) => {
@@ -25,7 +25,7 @@ class moreInfo extends React.Component {
           <h2> Lore </h2>
           <p style={{ lineHeight: 1.8, fontSize: '1.2em', padding: 20 }}>  <span style={{ fontSize: '1.5em', fontWeight: 'bold', borderBottom: '2px solid #333', fontFamily: 'arial', paddingLeft: 20 }} > {lore[0]} </span> {lore.slice(1)} </p>
       </main>
-      <ul> <h2> Spells </h2>
+      <ul className ="spells"> <h2> Spells </h2>
         {spells}
         </ul>
         <div className = "statGrid2"> 

@@ -15,7 +15,7 @@ export default class Champ extends Component {
 
   }
   async componentDidMount() {
-    console.log(this.props)
+ 
     const { name } = this.props.match.params
    
 

@@ -3,14 +3,14 @@ import {Link} from 'react-router-dom'
 
 export default function regionInfo(props) {
   const { name } = props.match.params
-  console.log(props.location.state)
+  
   const { info } = props.location.state
   //https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Lux.png
   let url = 'https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/'
   let champs = info[1].map((champ) => {
     if (!champ.includes('http')) {
       let imgUrl = `${url}${champ}.png`
-      console.log(url)
+       
       return (
        
         <li className ="champRegionListItem">
@@ -41,7 +41,7 @@ export default function regionInfo(props) {
             </p>
             </div>
           <h1 id ="regionChampions">Champions</h1>
-        <ul>
+        <ul className ="regionChampList">
           {champs}
           </ul>
           </div>
