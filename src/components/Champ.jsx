@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import url from '../url'
 import ChampInfo from './ChampInfo'
-import Error from './Error'
+import Loading from './Loading'
+
 
 export default class Champ extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export default class Champ extends Component {
             <input onKeyPress={this.handleKeyPress}placeholder= "Search..."></input>
           </h1>
         </div>
-        {isLoaded ? <ChampInfo info={info} /> : <Error info={this.state.params}/> }
+        {isLoaded ? <ChampInfo info={info} /> : <Loading /> }
       </div>
     )
   }
