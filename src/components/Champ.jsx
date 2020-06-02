@@ -3,6 +3,7 @@ import axios from 'axios'
 import url from '../url'
 import ChampInfo from './ChampInfo'
 import Loading from './Loading'
+import Error from './Error'
 
 
 export default class Champ extends Component {
@@ -11,7 +12,8 @@ export default class Champ extends Component {
     this.state = {
       info: {},
       isLoaded: false,
-      params: ""
+      params: "",
+      error: false
 
     }
 
@@ -24,13 +26,17 @@ export default class Champ extends Component {
     this.setState({
         params:name
       })
-      const resp = await axios.get(`${url}/${name}.json`)
-  
-    this.setState({
+    await axios.get(`${url}/${name}.json`)
+      .then(resp => {
+        this.setState({
     
-        info: resp.data.data[name],
-        isLoaded: true
+          info: resp.data.data[name],
+          isLoaded: true
+        })
       })
+    .catch( e => this.setState({error:true}))
+  
+    
   }
  handleKeyPress(event) {
     if (event.key === "Enter") {
@@ -40,7 +46,7 @@ export default class Champ extends Component {
   }
  
   render() {
-    let { isLoaded, info } = this.state
+    let { error,isLoaded, info } = this.state
  
 
     return (
@@ -50,7 +56,8 @@ export default class Champ extends Component {
             <input onKeyPress={this.handleKeyPress}placeholder= "Search..."></input>
           </h1>
         </div>
-        {isLoaded ? <ChampInfo info={info} /> : <Loading /> }
+        {error ? <Error /> : isLoaded ? <ChampInfo info={info} /> : <Loading />}
+        
       </div>
     )
   }
