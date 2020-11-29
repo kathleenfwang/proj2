@@ -70,6 +70,7 @@ a:hover {
   text-align:center;
 }
 button {
+  cursor:pointer;
   box-shadow: 5px 10px 18px #888888;
   border:3px solid #333;
 }

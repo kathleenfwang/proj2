@@ -18,7 +18,7 @@ export default class ChampInfo extends Component {
     window.scrollTo(0, 0);
     // render picture 
  
-    const { skins,id } = this.props.info // [{},{}] 
+    const { skins,id,name } = this.props.info // [{},{}] 
     const skinIndexes = skins.map((skin) => {
       return skin.num 
     })
@@ -27,7 +27,7 @@ export default class ChampInfo extends Component {
     const num = Math.floor(Math.random() * (skins.length)) 
     let index = skinIndexes[num] 
     let skinName = skins[num]["name"]
-    if (skinName === "default") skinName = `${skinName} ${id}`
+    if (skinName === "default") skinName = name
 
  
 
@@ -94,7 +94,7 @@ export default class ChampInfo extends Component {
                       data: data
                     }
                   }} >
-                    <button className ="infoButton"> Keep Reading </button>
+                    <button className ="footer"> <a href ="">Keep Reading </a></button>
                   </Link>
                   <h4> Spells:</h4>
                   <ul>
@@ -115,28 +115,28 @@ export default class ChampInfo extends Component {
               </ul>
               <ul>
           <li> HP:
-          <div className = "bar" style={{ width: stats.hp, height: 20, backgroundColor: 'red' }}>
+          <div className = "bar" style={{ width: stats.hp, height: 20, backgroundColor: '#FFB1B0' }}>
          {stats.hp}
     
             </div>
             </li>
           <li> Magic Damage:
-          <div className = "bar" style={{ width: stats.mp, height: 20, backgroundColor: 'orange' }}>
+          <div className = "bar" style={{ width: stats.mp, height: 20, backgroundColor: '#FFDFBE' }}>
               {stats.mp}
               </div>
           </li>
           <li> Magic Resist:
-          <div className = "bar" style={{ width: stats.spellblock, height: 20, backgroundColor: 'yellow' }}> 
+          <div className = "bar" style={{ width: stats.spellblock + 10, height: 20, backgroundColor: '#FFFFBF' }}> 
               {stats.spellblock}
               </div>
           </li>
           <li> Armor:
-          <div className = "bar" style={{ width: stats.armor, height: 20, backgroundColor: 'lightgreen' }}>
+          <div className = "bar" style={{ width: stats.armor + 10, height: 20, backgroundColor: '#B4F0A7' }}>
               {stats.armor} 
             </div>
           </li>
           <li> Attack Damage:
-          <div className = "bar" style={{ width: stats.attackdamage, height: 20, backgroundColor: 'lightblue' }}>
+          <div className = "bar" style={{ width: stats.attackdamage, height: 20, backgroundColor: '#A9D1F7' }}>
               {stats.attackdamage}
           </div>
            </li>
