@@ -52,7 +52,7 @@ export default class Champ extends Component {
     return (
       <div>
         <div id ="search"> 
-          <h1> Meet..
+          <h1> 
             <input onKeyPress={this.handleKeyPress}placeholder= "Search..."></input>
           </h1>
         </div>

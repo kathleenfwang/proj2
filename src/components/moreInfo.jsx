@@ -6,19 +6,25 @@ class moreInfo extends React.Component {
     super(props)
 
   }
-
+  handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      const {value }  = event.target
+      window.location.replace(`/champions/${value}`)
+    }
+  }
   render() {
-
     let {id,lore,spells,stats} = this.props.location.state.data
-     
-
     let skinUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`
     spells = spells.map((spell) => {
-    
       return (<li key ={spell.id}><h3> {spell.name} </h3> <p style={{lineHeight:1.6}}> {spell.description} </p></li>)
     })
     return (
       <>
+      <div id ="search"> 
+          <h1> 
+            <input onKeyPress={this.handleKeyPress}placeholder= "Search..."></input>
+          </h1>
+        </div>
       <div className="containerInfo">
       <main> 
       <h1> {id} </h1>
@@ -28,6 +34,7 @@ class moreInfo extends React.Component {
       </main>
       <ul className ="spells"> <h2> Spells </h2>
         {spells}
+        <button className = "footer"><Link to={`/champions/${id}`} style = {{marginTop:20}}> More Info </Link> </button>
         </ul>
         <div className = "statGrid2"> 
         <ul>
@@ -64,7 +71,7 @@ class moreInfo extends React.Component {
         </div>
         
       </div>
-      <Link to={`/champions/${id}`} style = {{marginTop:20}}> Back to Champion </Link> 
+     
       </>
     )
   }

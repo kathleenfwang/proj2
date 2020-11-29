@@ -94,7 +94,7 @@ export default class ChampInfo extends Component {
                       data: data
                     }
                   }} >
-                    <button className ="infoButton"> More info </button>
+                    <button className ="infoButton"> Keep Reading </button>
                   </Link>
                   <h4> Spells:</h4>
                   <ul>
@@ -142,7 +142,7 @@ export default class ChampInfo extends Component {
            </li>
                 </ul>
                 </div>
-              <Link to ="/regions"><button className ="infoButton" id ="exploreButton"> Time to explore! </button></Link>
+              {/* <Link to ="/regions"><button className ="infoButton" id ="exploreButton"> Explore New Regions </button></Link> */}
            
          </div> 
           : null}

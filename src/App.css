@@ -46,6 +46,7 @@ a {
   
 }
 #search {
+  margin-top:-50px;
   display:flex;
   justify-content: space-evenly;
 }
@@ -58,7 +59,7 @@ a {
  }
 
 a:hover {
-  font-weight: bold;
+  color:black;
 }
 .welcome {
   height:1000px;
@@ -219,7 +220,7 @@ footer {
   text-align: center;
   height:100px;
 }
-footer button {
+footer button, .footer {
  
   border-radius:30px;
   padding:10px 20px;
@@ -419,7 +420,6 @@ footer button {
   border-radius:40px;
 }
 .champRegionListItem:hover {
-  font-weight: bold;
   box-shadow:5px 10px 18px #888888;
   opacity:90%;
 }
