@@ -56,8 +56,7 @@ export default class Champ extends Component {
             <input onKeyPress={this.handleKeyPress}placeholder= "Search..."></input>
           </h1>
         </div>
-        {error ? <Error /> : isLoaded ? <ChampInfo info={info} /> : <Loading />}
-        
+        {error ? <Error /> : isLoaded && <ChampInfo info={info}/>}
       </div>
     )
   }

@@ -297,16 +297,13 @@ footer button, .footer {
   border-radius:30px;
 }
 .regionHead {
- 
-  text-align:center;
-  background-color:#333;
+  margin-top: -30px;
+  text-align: center;
+  background-color: #333;
   border-radius: 30px;
-  color:white;
-  padding:50px 20px;
+  color: white;
+  padding: 20px;
   box-shadow:5px 10px 18px #888888;
-
-
- 
 }
 .teemoIcon {
   position: -webkit-sticky; /* Safari */

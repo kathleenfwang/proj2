@@ -59,7 +59,7 @@ export default class Regions extends React.Component{
       <div className ="regionWholeContainer">
    
         <h1 className ="regionHead"> 
-      Explore Different Regions 
+      Regions 
       </h1>
        
       
