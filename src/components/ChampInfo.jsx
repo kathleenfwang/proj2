@@ -10,75 +10,52 @@ export default class ChampInfo extends Component {
       isLoading: false,
       skinName: ""
     }
-
   }
-
  //`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_${skinNums[skinIndex]}.jpg`
   componentDidMount() {
     window.scrollTo(0, 0);
     // render picture 
- 
     const { skins,id,name } = this.props.info // [{},{}] 
-    const skinIndexes = skins.map((skin) => {
-      return skin.num 
-    })
-  
- 
+    const skinIndexes = skins.map((skin) => skin.num )
     const num = Math.floor(Math.random() * (skins.length)) 
     let index = skinIndexes[num] 
     let skinName = skins[num]["name"]
-    if (skinName === "default") skinName = name
-
- 
-
     let url = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${index}.jpg` 
-
+    if (skinName === "default") skinName = name
     this.setState({
       data:this.props.info,
       url: url,
       isLoading: true,
       skinName: skinName 
     })
-  
   }
   render() {
     let { name, title, blurb, tags, info, spells,stats } = this.props.info
     const { data, isLoading, url, skinName } = this.state 
- 
     let champstats = []
     // {attack:5,magic:3..}
-
     const colors = ["#96ceb4","#ffeead","#ffcc5c","#ff6f69"]
     let i = 0
-
     for (let stat in info) {
-
       champstats.push((
         <li>
-          <div style={{ width: 80, border: "hidden",padding:5}}>  {stat}   </div>
+          <div style={{ width: 80, border: "hidden",padding:5}}>  {stat}</div>
           <div style={{ backgroundColor: colors[i], width: info[stat] * 50, height: 15 }}
-      className ="bar">{info[stat]} </div>  </li>
-    ))
+      className ="bar">{info[stat]} </div>
+      </li>))
     i++
     }
     tags = (tags.join('/'))
-    spells = spells.map((spell) =>{
-      return (<li key ={spell.id}>{spell.name} </li>)
-    })
-  
-   
+    spells = spells.map((spell) => <li key ={spell.id}>{spell.name} </li>)
     return (
       <div style ={{backgroundColor:"whitesmoke",borderRadius:30}}>
         {
-          isLoading ?
+          isLoading &&
             <div className = "wholePage">
         <div className ="container"> 
           <div className = "img">
                   <img src={url} />
-                 
-                  
           </div> 
-                
                 <main> 
                   <header> 
           <h1> {skinName} </h1>
@@ -87,37 +64,28 @@ export default class ChampInfo extends Component {
                   </header>
                   <section> 
                   <p> {blurb}  </p>
-                  
                   <Link to={{
                     pathname:`${name}/moreInfo`,
-                    state: {
-                      data: data
-                    }
+                    state: {data: data}
                   }} >
                     <button className ="footer"> <a href ="">Keep Reading </a></button>
                   </Link>
                   <h4> Spells:</h4>
                   <ul>
-                    
                     {spells}
                   </ul>
                   </section>
-                 
-               
                 </main>
                 </div>
                 <h2 className = "statHeader"> Stats </h2>
               <div className="statGrid"> 
-             
                 <ul> 
-               
                 {champstats}
               </ul>
               <ul>
           <li> HP:
           <div className = "bar" style={{ width: stats.hp, height: 20, backgroundColor: '#FFB1B0' }}>
          {stats.hp}
-    
             </div>
             </li>
           <li> Magic Damage:
@@ -143,9 +111,7 @@ export default class ChampInfo extends Component {
                 </ul>
                 </div>
               {/* <Link to ="/regions"><button className ="infoButton" id ="exploreButton"> Explore New Regions </button></Link> */}
-           
-         </div> 
-          : null}
+         </div> }
       </div>
     )
   }
