@@ -19,15 +19,16 @@ export default class Regions extends React.Component {
           <Link
             to={{
               pathname: `/regions/${regions[0]}`,
-              state: {info: regions},
-            }}>
+              state: { info: regions },
+            }}
+          >
             <img src={regions[1][len]} className="regionImg"></img>
             <h1 className="centered">{regions[0]}</h1>
           </Link>
         </div>
       );
     });
-    this.setState({regionArr: regionArr});
+    this.setState({ regionArr: regionArr });
   }
   getRandomRegions = () => {
     const { regionArr } = this.state;
@@ -37,12 +38,13 @@ export default class Regions extends React.Component {
       let num = Math.floor(Math.random() * (regionArr.length - 1));
       if (!nums[num]) {
         nums.push(num);
-        randomRegions.push(regionArr[num])}
+        randomRegions.push(regionArr[num]);
+      }
     }
-    return randomRegions 
-  }
+    return randomRegions;
+  };
   render() {
-    const randomRegions = this.getRandomRegions()
+    const randomRegions = this.getRandomRegions();
     return (
       <div className="regionWholeContainer">
         <h1 className="regionHead">Regions</h1>

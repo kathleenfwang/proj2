@@ -50,21 +50,18 @@ class moreInfo extends React.Component {
             </p>
           </main>
           <ul className="spells">
-            {" "}
             <h2> Spells </h2>
             {spells}
             <button className="footer">
               <Link to={`/champions/${id}`} style={{ marginTop: 20 }}>
-                {" "}
-                More Info{" "}
-              </Link>{" "}
+                Back
+              </Link> 
             </button>
           </ul>
           <div className="statGrid2">
             <ul>
               <h2> Stats </h2>
               <li>
-                {" "}
                 <h4> HP: </h4>
                 <div
                   className="bar"
@@ -73,14 +70,11 @@ class moreInfo extends React.Component {
                     height: 20,
                     backgroundColor: "red",
                     padding: 5,
-                  }}
-                >
+                  }}>
                   {stats.hp}
                 </div>
               </li>
-
               <li>
-                {" "}
                 <h4> Magic Damage: </h4>
                 <div
                   className="bar"
@@ -88,13 +82,11 @@ class moreInfo extends React.Component {
                     width: stats.mp,
                     height: 20,
                     backgroundColor: "orange",
-                  }}
-                >
+                  }}>
                   {stats.mp}
                 </div>
               </li>
               <li>
-                {" "}
                 <h4> Magic Resist: </h4>
                 <div
                   className="bar"
@@ -102,13 +94,11 @@ class moreInfo extends React.Component {
                     width: stats.spellblock,
                     height: 20,
                     backgroundColor: "yellow",
-                  }}
-                >
+                  }}>
                   {stats.spellblock}
                 </div>
               </li>
               <li>
-                {" "}
                 <h4> Armor: </h4>
                 <div
                   className="bar"
@@ -116,13 +106,11 @@ class moreInfo extends React.Component {
                     width: stats.armor,
                     height: 20,
                     backgroundColor: "lightgreen",
-                  }}
-                >
+                  }}>
                   {stats.armor}
                 </div>
               </li>
               <li>
-                {" "}
                 <h4> Attack Damage: </h4>
                 <div
                   className="bar"
@@ -130,8 +118,7 @@ class moreInfo extends React.Component {
                     width: stats.attackdamage,
                     height: 20,
                     backgroundColor: "lightblue",
-                  }}
-                >
+                  }}>
                   {stats.attackdamage}
                 </div>
               </li>
