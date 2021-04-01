@@ -110,7 +110,6 @@ export default class ChampInfo extends Component {
            </li>
                 </ul>
                 </div>
-              {/* <Link to ="/regions"><button className ="infoButton" id ="exploreButton"> Explore New Regions </button></Link> */}
          </div> }
       </div>
     )

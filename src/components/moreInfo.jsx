@@ -38,15 +38,13 @@ class moreInfo extends React.Component {
             <img src={skinUrl} />
             <h2> Lore </h2>
             <p style={{ lineHeight: 1.8, fontSize: "1.2em", padding: 20 }}>
-              {" "}
               <span
                 id="letterLore"
                 style={{ fontFamily: "system font", marginLeft: 0 }}
               >
-                {" "}
-                {lore[0]}{" "}
-              </span>{" "}
-              {lore.slice(1)}{" "}
+                {lore[0]}
+              </span>
+              {lore.slice(1)}
             </p>
           </main>
           <ul className="spells">
@@ -55,7 +53,7 @@ class moreInfo extends React.Component {
             <button className="footer">
               <Link to={`/champions/${id}`} style={{ marginTop: 20 }}>
                 Back
-              </Link> 
+              </Link>
             </button>
           </ul>
           <div className="statGrid2">
@@ -70,7 +68,8 @@ class moreInfo extends React.Component {
                     height: 20,
                     backgroundColor: "red",
                     padding: 5,
-                  }}>
+                  }}
+                >
                   {stats.hp}
                 </div>
               </li>
@@ -82,7 +81,8 @@ class moreInfo extends React.Component {
                     width: stats.mp,
                     height: 20,
                     backgroundColor: "orange",
-                  }}>
+                  }}
+                >
                   {stats.mp}
                 </div>
               </li>
@@ -94,7 +94,8 @@ class moreInfo extends React.Component {
                     width: stats.spellblock,
                     height: 20,
                     backgroundColor: "yellow",
-                  }}>
+                  }}
+                >
                   {stats.spellblock}
                 </div>
               </li>
@@ -106,7 +107,8 @@ class moreInfo extends React.Component {
                     width: stats.armor,
                     height: 20,
                     backgroundColor: "lightgreen",
-                  }}>
+                  }}
+                >
                   {stats.armor}
                 </div>
               </li>
@@ -118,7 +120,8 @@ class moreInfo extends React.Component {
                     width: stats.attackdamage,
                     height: 20,
                     backgroundColor: "lightblue",
-                  }}>
+                  }}
+                >
                   {stats.attackdamage}
                 </div>
               </li>
@@ -129,5 +132,4 @@ class moreInfo extends React.Component {
     );
   }
 }
-
 export default moreInfo;
