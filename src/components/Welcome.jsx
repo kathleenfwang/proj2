@@ -1,12 +1,12 @@
 import React from 'react'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 export default function Welcome() {
   return (<div>
-  <Redirect to="/champions/Teemo" />}
-  {/* // window.scrollTo(0, 0);
+  <Redirect to="/champions/Teemo" />
+  {/* previously displays a "welcome page", but now just showing the "Teemo" champion info
+  // window.scrollTo(0, 0);
   // return (
-   
   //   <div className ="welcome">
   //     <h1 > Welcome to Teemo's Adventure </h1>
 
@@ -19,7 +19,6 @@ export default function Welcome() {
   //         name:'Teemo'
   //       }
   //     }}>
-        
   //       <button>Start</button>
   //     </Link>  */}
   </div>
